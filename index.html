@@ -1,0 +1,17 @@
+<html style="color-scheme: light dark">
+<center>
+  <h1 id="statusText" style="font-size: 120px">Yes.</h1>
+  <script>
+    let answer = "Yes.";
+    const hostname = window.location.hostname || "";
+    if(hostname === 'localhost' || 
+        hostname === '' ||
+        hostname.startsWith('127.0.0.'/* subnet /8 */) ||
+        hostname.startsWith('0.0.0.') ||
+        hostname === '[::1]'
+    ) {
+        answer = "Maybe.";
+    }
+    document.getElementById("statusText").innerHTML = answer;
+  </script>
+</center>
